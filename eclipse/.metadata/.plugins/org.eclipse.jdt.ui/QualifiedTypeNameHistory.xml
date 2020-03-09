@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="net.minecraft.entity.monster.EntityMob"/>
+<fullyQualifiedTypeName name="net.minecraft.entity.EntityCreature"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.entity.OutfitVariants"/>
+<fullyQualifiedTypeName name="net.minecraft.network.datasync.EntityDataManager"/>
+<fullyQualifiedTypeName name="net.minecraft.network.datasync.DataParameter"/>
+<fullyQualifiedTypeName name="net.minecraft.network.datasync.DataSerializers"/>
+<fullyQualifiedTypeName name="net.minecraft.init.SoundEvents"/>
+<fullyQualifiedTypeName name="net.minecraft.entity.player.EntityPlayer"/>
+<fullyQualifiedTypeName name="net.minecraft.util.EnumHand"/>
+<fullyQualifiedTypeName name="net.minecraft.item.ItemStack"/>
+<fullyQualifiedTypeName name="net.minecraft.item.Item"/>
+<fullyQualifiedTypeName name="net.minecraft.init.Blocks"/>
+<fullyQualifiedTypeName name="net.minecraft.nbt.NBTTagCompound"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.render.layers.LayerGlove"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.model.ModelSapphiru"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.model.ModelTopazio"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.entity.gem.EntityEmerald"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.model.ModelEmerald"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.model.ModelQuartzo"/>
+<fullyQualifiedTypeName name="net.minecraft.client.model.ModelBox"/>
+<fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.init.KAGIC"/>
+<fullyQualifiedTypeName name="mod.heimrarnadalr.kagic.util.Colors"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.entity.gem.EntityQuartzSoldier"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.model.ModelQuartz"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.entity.gem.EntityAmethyst"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.render.layers.LayerLaceMark1"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.render.layers.LayerLaceMark2"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.entity.EntityGem"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.render.layers.LayerEye"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.model.ModelGem"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.model.ModelGarnat"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.model.ModelPurl"/>
+<fullyQualifiedTypeName name="mod.akrivus.kagic.client.model.fusions.ModelRhodonité"/>
+</qualifiedTypeNameHistroy>

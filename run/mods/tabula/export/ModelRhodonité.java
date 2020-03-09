@@ -1,0 +1,99 @@
+package mod.akrivus.kagic.client.model.fusions;
+
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+
+/**
+ * Rhodonite - Undefined
+ * Created using Tabula 7.1.0
+ */
+public class ModelRhodonité extends ModelBase {
+    public ModelRenderer bipedBody;
+    public ModelRenderer Waist;
+    public ModelRenderer bipedNeck;
+    public ModelRenderer bipedRightArm;
+    public ModelRenderer bipedLeftArm;
+    public ModelRenderer right_arm_bottom;
+    public ModelRenderer right_leg_bottom;
+    public ModelRenderer left_leg_bottom;
+    public ModelRenderer left_arm_bottom;
+    public ModelRenderer bipedRightLeg;
+    public ModelRenderer bipedLeftLeg;
+    public ModelRenderer bipedHead;
+    public ModelRenderer bipedNose;
+
+    public ModelRhodonité() {
+        this.textureWidth = 94;
+        this.textureHeight = 62;
+        this.bipedLeftArm = new ModelRenderer(this, 64, 0);
+        this.bipedLeftArm.setRotationPoint(7.0F, 0.2F, 0.5F);
+        this.bipedLeftArm.addBox(0.0F, 0.0F, 0.0F, 4, 11, 4, 0.0F);
+        this.setRotateAngle(bipedLeftArm, 0.0F, 0.0F, -0.4363323129985824F);
+        this.bipedNose = new ModelRenderer(this, 0, 0);
+        this.bipedNose.setRotationPoint(7.5F, 7.0F, -1.5F);
+        this.bipedNose.addBox(0.0F, 0.0F, 0.0F, 1, 1, 2, 0.0F);
+        this.bipedNeck = new ModelRenderer(this, 26, 18);
+        this.bipedNeck.setRotationPoint(2.5F, -1.5F, 1.0F);
+        this.bipedNeck.addBox(0.0F, 0.0F, 0.0F, 3, 2, 3, 0.0F);
+        this.right_leg_bottom = new ModelRenderer(this, 0, 38);
+        this.right_leg_bottom.setRotationPoint(-1.0F, 5.0F, 0.0F);
+        this.right_leg_bottom.addBox(0.0F, 0.0F, 0.0F, 4, 6, 4, 0.0F);
+        this.bipedRightLeg = new ModelRenderer(this, 0, 48);
+        this.bipedRightLeg.setRotationPoint(0.5F, 6.0F, 0.5F);
+        this.bipedRightLeg.addBox(0.0F, 0.0F, 0.0F, 3, 7, 3, 0.0F);
+        this.bipedBody = new ModelRenderer(this, 0, 18);
+        this.bipedBody.setRotationPoint(-4.0F, 0.0F, -2.5F);
+        this.bipedBody.addBox(0.0F, 0.0F, 0.0F, 8, 6, 5, 0.0F);
+        this.left_leg_bottom = new ModelRenderer(this, 16, 38);
+        this.left_leg_bottom.setRotationPoint(3.0F, 5.0F, 0.0F);
+        this.left_leg_bottom.addBox(0.0F, 0.0F, 0.0F, 4, 6, 4, 0.0F);
+        this.bipedLeftLeg = new ModelRenderer(this, 12, 48);
+        this.bipedLeftLeg.setRotationPoint(0.5F, 6.0F, 0.5F);
+        this.bipedLeftLeg.addBox(0.0F, 0.0F, 0.0F, 3, 7, 3, 0.0F);
+        this.bipedRightArm = new ModelRenderer(this, 48, 0);
+        this.bipedRightArm.setRotationPoint(-2.5F, -1.5F, 0.5F);
+        this.bipedRightArm.addBox(0.0F, 0.0F, 0.0F, 4, 11, 4, 0.0F);
+        this.setRotateAngle(bipedRightArm, 0.0F, 0.0F, 0.4363323129985824F);
+        this.left_arm_bottom = new ModelRenderer(this, 40, 28);
+        this.left_arm_bottom.setRotationPoint(8.6F, 1.5F, -5.0F);
+        this.left_arm_bottom.addBox(0.0F, 0.0F, 0.0F, 2, 2, 8, 0.0F);
+        this.setRotateAngle(left_arm_bottom, 0.0F, -0.6108652381980153F, 0.0F);
+        this.right_arm_bottom = new ModelRenderer(this, 40, 18);
+        this.right_arm_bottom.setRotationPoint(-4.5F, 1.5F, -4.0F);
+        this.right_arm_bottom.addBox(0.0F, 0.0F, 0.0F, 2, 2, 8, 0.0F);
+        this.setRotateAngle(right_arm_bottom, 0.0F, 0.6108652381980153F, 0.0F);
+        this.bipedHead = new ModelRenderer(this, 0, 0);
+        this.bipedHead.setRotationPoint(-6.5F, -10.0F, -2.0F);
+        this.bipedHead.addBox(0.0F, 0.0F, 0.0F, 16, 10, 8, 0.0F);
+        this.Waist = new ModelRenderer(this, 0, 29);
+        this.Waist.setRotationPoint(1.0F, 6.0F, 0.5F);
+        this.Waist.addBox(0.0F, 0.0F, 0.0F, 6, 5, 4, 0.0F);
+        this.bipedBody.addChild(this.bipedLeftArm);
+        this.bipedHead.addChild(this.bipedNose);
+        this.bipedBody.addChild(this.bipedNeck);
+        this.Waist.addChild(this.right_leg_bottom);
+        this.right_leg_bottom.addChild(this.bipedRightLeg);
+        this.Waist.addChild(this.left_leg_bottom);
+        this.left_leg_bottom.addChild(this.bipedLeftLeg);
+        this.bipedBody.addChild(this.bipedRightArm);
+        this.Waist.addChild(this.left_arm_bottom);
+        this.Waist.addChild(this.right_arm_bottom);
+        this.bipedNeck.addChild(this.bipedHead);
+        this.bipedBody.addChild(this.Waist);
+    }
+
+    @Override
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+        this.bipedBody.render(f5);
+    }
+
+    /**
+     * This is a helper function from Tabula to set the rotation of model parts
+     */
+    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        modelRenderer.rotateAngleX = x;
+        modelRenderer.rotateAngleY = y;
+        modelRenderer.rotateAngleZ = z;
+    }
+}

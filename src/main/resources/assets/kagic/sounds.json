@@ -1,0 +1,54 @@
+{
+    "blocks.gem_seed_hatch": {
+        "sounds": [
+            { "name": "kagic:blocks/gem_seed_hatch" }
+        ]
+    },
+    "blocks.injector_close": {
+        "sounds": [
+            { "name": "kagic:blocks/injector_close" }
+        ]
+    },
+    "blocks.injector_open": {
+        "sounds": [
+            { "name": "kagic:blocks/injector_open" }
+        ]
+    },
+    "blocks.injector_fire": {
+        "sounds": [
+            { "name": "kagic:blocks/injector_fire" }
+        ]
+    },
+    "entities.gem.poof": {
+    	"sounds": [
+    		{ "name": "kagic:entities/poof" }
+    	]
+    },
+    "entities.gem.shatter": {
+    	"sounds": [
+    		{ "name": "kagic:entities/shatter" }
+    	]
+    },
+    "entities.slag.eat": {
+    	"sounds": [
+    		{ "name": "kagic:entities/slag/eat" }
+    	]
+    },
+    "entities.slag.living": {
+    	"sounds": [
+    		{ "name": "kagic:entities/slag/slag1" },
+    		{ "name": "kagic:entities/slag/slag2" },
+    		{ "name": "kagic:entities/slag/slag3" },
+    		{ "name": "kagic:entities/slag/slag4" },
+    		{ "name": "kagic:entities/slag/slag5" }
+    	]
+    },
+    "blocks.warp_pad": {
+        "category": "block",
+        "subtitle": "kagic.subtitle.warp_pad",
+        "sounds": [ 
+            { "name": "kagic:blocks/warp_pad_1"},
+            { "name": "kagic:blocks/warp_pad_2"}
+        ]
+    }
+}
