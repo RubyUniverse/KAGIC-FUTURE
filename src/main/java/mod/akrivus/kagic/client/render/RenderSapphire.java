@@ -1,7 +1,6 @@
 package mod.akrivus.kagic.client.render;
 
 import mod.akrivus.kagic.client.model.ModelSapphire;
-import mod.akrivus.kagic.client.model.ModelSapphiru;
 import mod.akrivus.kagic.client.render.layers.LayerBirthdayHat;
 import mod.akrivus.kagic.client.render.layers.LayerEye;
 import mod.akrivus.kagic.client.render.layers.LayerGemPlacement;
@@ -25,7 +24,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderSapphire extends RenderGemBase<EntitySapphire> {
 	public RenderSapphire() {
-        super(Minecraft.getMinecraft().getRenderManager(), new ModelSapphiru(), 0.25F);
+        super(Minecraft.getMinecraft().getRenderManager(), new ModelSapphire(), 0.25F);
         this.addLayer(new LayerSapphireItem(this));
         this.addLayer(new LayerSkin(this));
         this.addLayer(new LayerUniform(this));

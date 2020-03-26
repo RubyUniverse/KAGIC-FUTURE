@@ -118,13 +118,27 @@ public class ModelQuartz extends ModelGem {
 		this.bipedDress.render(scale);
 		if (entityIn instanceof EntityQuartzSoldier) {
 			EntityQuartzSoldier gem = (EntityQuartzSoldier) entityIn;
-			if (gem.getUniformStyle() != 3) {
+			if (gem.getUniformStyle() != 2) {
 		        this.bipedRightLeg.render(scale);
 		        this.bipedLeftLeg.render(scale);
-		    }
-		}
-	}
-
+			}
+			else if (gem.getUniformStyle() != 4) {
+			        this.bipedRightLeg.render(scale);
+			        this.bipedLeftLeg.render(scale);
+				}
+				else if (gem.getUniformStyle() != 5) {
+							        this.bipedRightLeg.render(scale);
+							        this.bipedLeftLeg.render(scale);
+								}
+					else if (gem.getUniformStyle() != 6) {
+						this.bipedRightLeg.render(scale);
+						this.bipedLeftLeg.render(scale);
+						}
+					}
+				}
+					        
+			        	
+		
 	@Override
 	public void renderCape(float scale)
 	{

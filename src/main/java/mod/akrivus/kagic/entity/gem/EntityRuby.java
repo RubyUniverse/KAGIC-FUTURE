@@ -607,7 +607,8 @@ public class EntityRuby extends EntityGem implements IAnimals {
         }
         return Colors.arbiLerp(EntityRuby.HAIR_COLORS.get(this.getSpecial()));
 	}
-	protected int generateGloveColor() {
+	@Override
+	public int generateGloveColor() {
 		switch (this.getSpecial()) {
         }
         return Colors.arbiLerp(EntityRuby.GLOVE_COLORS.get(this.getSpecial()));

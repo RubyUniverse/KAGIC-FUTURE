@@ -1,6 +1,7 @@
 package mod.akrivus.kagic.client.render;
 
 import mod.akrivus.kagic.client.model.ModelGarnat;
+import mod.akrivus.kagic.client.model.ModelGarney;
 import mod.akrivus.kagic.client.model.ModelHessonite;
 import mod.akrivus.kagic.client.render.layers.LayerBirthdayHat;
 import mod.akrivus.kagic.client.render.layers.LayerGemPlacement;
@@ -24,7 +25,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderHessonite extends RenderGemBase<EntityHessonite> {
 
 	public RenderHessonite() {
-		super(Minecraft.getMinecraft().getRenderManager(), new ModelGarnat(), 0.5F);
+		super(Minecraft.getMinecraft().getRenderManager(), new ModelGarney(), 0.5F);
 
 		this.addLayer(new LayerQuartzItem(this));
 		if (KAGIC.isBirthday()) {

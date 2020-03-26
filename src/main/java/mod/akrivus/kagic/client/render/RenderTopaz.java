@@ -1,7 +1,6 @@
 package mod.akrivus.kagic.client.render;
 
 import mod.akrivus.kagic.client.model.ModelTopaz;
-import mod.akrivus.kagic.client.model.ModelTopazio;
 import mod.akrivus.kagic.client.render.layers.LayerBirthdayHat;
 import mod.akrivus.kagic.client.render.layers.LayerEye;
 import mod.akrivus.kagic.client.render.layers.LayerFusionPlacement;
@@ -24,7 +23,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderTopaz extends RenderGemBase<EntityTopaz> {
 	public RenderTopaz() {
-        super(Minecraft.getMinecraft().getRenderManager(), new ModelTopazio(), 0.625F);
+        super(Minecraft.getMinecraft().getRenderManager(), new ModelTopaz(), 0.625F);
         this.addLayer(new LayerTopazItem(this));
         this.addLayer(new LayerSkin(this));
         this.addLayer(new LayerEye(this));
@@ -42,14 +41,6 @@ public class RenderTopaz extends RenderGemBase<EntityTopaz> {
 			this.addLayer(new LayerSantaHat(this));
 		}
 
-		LayerBipedArmor topazArmor = new LayerBipedArmor(this) {
-			@Override
-			protected void initArmor() {
-				this.modelLeggings = new ModelTopaz(0.5F, true);
-				this.modelArmor = new ModelTopaz(1F, true);
-			}
-		};
-		this.addLayer(topazArmor);
 	}
 	
 	@Override

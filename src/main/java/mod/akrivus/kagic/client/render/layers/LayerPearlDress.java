@@ -1,6 +1,6 @@
 package mod.akrivus.kagic.client.render.layers;
 
-import mod.akrivus.kagic.client.model.ModelPearl;
+import mod.akrivus.kagic.client.model.ModelPiirl;
 import mod.akrivus.kagic.client.render.RenderGemBase;
 import mod.akrivus.kagic.client.render.RenderPearl;
 import mod.akrivus.kagic.entity.gem.EntityPearl;
@@ -11,7 +11,7 @@ import net.minecraft.item.EnumDyeColor;
 
 public class LayerPearlDress implements LayerRenderer<EntityPearl> {
 	private final RenderGemBase pearlRenderer;
-	private final ModelPearl pearlModel = new ModelPearl();
+	private final ModelPiirl pearlModel = new ModelPiirl();
 	
 	public LayerPearlDress(RenderGemBase pearlRendererIn) {
 		this.pearlRenderer = pearlRendererIn;

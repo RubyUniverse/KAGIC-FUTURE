@@ -230,13 +230,13 @@ public class EntityAmethyst extends EntityQuartzSoldier implements IAnimals {
 		MARK_2_COLORS.put(1, lace);
 	}
 	
-	private static final int NUM_HAIRSTYLES = 5;
+	private static final int NUM_HAIRSTYLES = 6;
 	
-	private static final int NUM_UNIFORMS = 5;
+	private static final int NUM_UNIFORMS = 7;
 	
-	private static final int NUM_GLOVES = 2;
+	private static final int NUM_GLOVES = 4;
 	
-	private static final int NUM_INSIGNIAS = 4;
+	private static final int NUM_INSIGNIAS = 5;
 	
 	private int charge_ticks = 0;
 	private int hit_count = 0;

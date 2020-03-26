@@ -109,6 +109,7 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
 	protected static final DataParameter<Integer> INSIGNIA_STYLE = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
 	protected static final DataParameter<Integer> GLOVE_COLOR = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
 	protected static final DataParameter<Integer> GLOVE_STYLE = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
+	protected static final DataParameter<Integer> SHOE = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
 	
 	protected static final DataParameter<Integer> EYE_COLOR = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
 	
@@ -117,6 +118,7 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
 	protected static final DataParameter<Integer> SKIN_COLOR = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
 	protected static final DataParameter<Integer> HAIR_COLOR = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
 	protected static final DataParameter<Integer> GEM_COLOR = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
+	protected static final DataParameter<Integer> SHOE_COLOR = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
 	protected static final DataParameter<Integer> HAIR = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
 	protected static final DataParameter<Integer> GEM_CUT = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
 	protected static final DataParameter<Integer> GEM_PLACEMENT = EntityDataManager.<Integer>createKey(EntityGem.class, DataSerializers.VARINT);
@@ -220,10 +222,12 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
 		this.dataManager.register(HAIR_COLOR, 0);
 		this.dataManager.register(GEM_COLOR, 0);
 		this.dataManager.register(HAIR, 0);
-		this.dataManager.register(UNIFORM_STYLE, 0);
-	    this.dataManager.register(INSIGNIA_STYLE, 0);
+		this.dataManager.register(SHOE, 0);
+		this.dataManager.register(UNIFORM_STYLE, -1);
+	    this.dataManager.register(INSIGNIA_STYLE, -1);
 		this.dataManager.register(GLOVE_STYLE, 1);
 		this.dataManager.register(GLOVE_COLOR, 0);
+		this.dataManager.register(SHOE_COLOR, 0);
 		this.dataManager.register(EYE_COLOR, 0);
 		this.dataManager.register(SWINGING_ARMS, false);
 		this.dataManager.register(DEFECTIVE, false);
@@ -244,6 +248,7 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
 		compound.setBoolean("hasVisor", this.hasVisor());
 		compound.setInteger("uniform", this.getUniformStyle());
 		compound.setInteger("insignia", this.getInsigniaStyle());
+		compound.setInteger("shoe", this.getShoeStyle());
 		compound.setInteger("gloveColor", this.getGloveColor());
 		compound.setInteger("gloveStyle", this.getGloveStyle());
 		compound.setInteger("eyeColor", this.getEyeColor());
@@ -336,6 +341,12 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
 		}
 		else {
 			this.setInsigniaStyle(this.getInsigniaStyle());
+		}
+		if (compound.hasKey("shoe")) {
+			this.setShoeStyle(compound.getInteger("shoe"));
+		}
+		else {
+			this.setShoeStyle(this.getShoeStyle());
 		}
 		if (compound.hasKey("uniform")) {
 			this.setUniformStyle(compound.getInteger("uniform"));
@@ -493,6 +504,7 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
 		
 		this.setGemCut(cut.id);
 		this.setGemPlacement(placement.id);		
+		
 	}
 	
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, IEntityLivingData livingdata) {
@@ -539,7 +551,9 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
 	protected int generateSkinColor() {
 		return 0;
 	}
-	
+	protected int generateShoeStyle() {
+		return 0;
+	}
 	protected int generateHairStyle() {
 		return 0;
 	}
@@ -1025,8 +1039,13 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
 		KAGIC.instance.chatInfoMessage("skinColor is " + this.getSkinColor());
 		KAGIC.instance.chatInfoMessage("hairColor is " + this.getHairColor());
 		KAGIC.instance.chatInfoMessage("Hair style is " + this.getHairStyle());
+		KAGIC.instance.chatInfoMessage("Glove style is " + this.getGloveStyle());
+		KAGIC.instance.chatInfoMessage("Shoe style is " + this.getShoeStyle());
 		KAGIC.instance.chatInfoMessage("Insignia color is " + this.getInsigniaColor());
 		KAGIC.instance.chatInfoMessage("Uniform color is " + this.getUniformColor());
+		KAGIC.instance.chatInfoMessage("Eye color is " + this.getEyeColor());
+		KAGIC.instance.chatInfoMessage("Glove color is " + this.getGloveColor());
+		KAGIC.instance.chatInfoMessage("Shoe color is " + this.getShoeColor());
 		KAGIC.instance.chatInfoMessage("Size is " + this.width + ", " + this.height);
 		KAGIC.instance.chatInfoMessage("Pitch is " + this.pitch);
 		return false;
@@ -1288,6 +1307,7 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
         this.setHasVisor(this.hasVisor());
 		this.setInsigniaColor(this.nativeColor);
 		this.setHairStyle(this.generateHairStyle());
+		this.setShoeStyle(this.generateShoeStyle());
 		this.setGloveStyle(this.generateGloveStyle());
 		this.setEyeColor(this.generateEyeColor());
 		this.setUniformStyle(this.generateUniformStyle());
@@ -1358,6 +1378,13 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
 		this.dataManager.set(INSIGNIA_COLOR, insigniaColor);
 	}
 	
+	public int getShoeColor() {
+		return this.dataManager.get(SHOE_COLOR);
+	}
+	
+	public void setShoeColor(int shoeColor) {
+		this.dataManager.set(SHOE_COLOR, shoeColor);
+	}
 	public int getUniformColor() {
 		return this.dataManager.get(UNIFORM_COLOR);
 	}
@@ -1393,7 +1420,13 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
    		this.dataManager.set(EYE_COLOR, eyeColor);
    	}
    	
-   	
+	public int getShoeStyle() {
+		return this.dataManager.get(SHOE);
+	}
+	
+	public void setShoeStyle(int shoe) {
+		this.dataManager.set(HAIR, shoe);
+	}
    	public void setUniformStyle(int uniform) {
    		this.dataManager.set(UNIFORM_STYLE, uniform);
    	}
@@ -2272,6 +2305,7 @@ public class EntityGem extends EntityCrystalSkills implements IEntityOwnable, IR
 	public void readSpawnData(ByteBuf buffer) {
 		this.setSize(buffer.readFloat(), buffer.readFloat());
 	}
+
 
 	
 }

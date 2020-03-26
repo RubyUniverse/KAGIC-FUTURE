@@ -22,6 +22,7 @@ public class RenderGemBase<T extends EntityGem> extends RenderBiped<T> {
 			}
 		}
 	}
+	
 	protected void renderEntityName(T entityIn, double x, double y, double z, String name, double distanceSq) {
 		if (ModConfigs.displayNames) {
 			this.renderLivingLabel(entityIn, name, x, y+0.25, z, 64);

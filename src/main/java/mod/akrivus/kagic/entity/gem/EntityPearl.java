@@ -49,6 +49,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.items.wrapper.InvWrapper;
@@ -119,112 +120,124 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
     	case 0:
     		return 0xFFFFFF;
     	case 1:
-    		return 0xC6A68B;
+    		return 0xFEFFC9;
     	case 2:
-    		return 0xBF92D1;
+    		return 0xFFF0FC;
     	case 3:
-    		return 0x657991;
+    		return 0xF3FCFF;
     	case 4:
-    		return 0xFCFCB0;
+    		return 0xFEFFD2;
     	case 5:
-    		return 0x7A9165;
+    		return 0xFBFFD5;
     	case 6:
-    		return 0xE5A0B7;
+    		return 0xFFEAF0;
     	case 7:
-    		return 0xB2B2B2;
+    		return 0xE1E1E1;
     	case 8:
-    		return 0x545454;
+    		return 0xF0F0F0;
     	case 9:
-    		return 0x7CA0B2;
+    		return 0xE4FFEC;
     	case 10:
-    		return 0x9579AD;
+    		return 0xF3DEFF;
     	case 11:
-    		return 0x808BB7;
+    		return 0x0000AA;
     	case 12:
-    		return 0xB2763E;
+    		return 0xFFECDB;
     	case 13:
-    		return 0x88B22C;
+    		return 0xF1FFC3;
     	case 14:
-    		return 0xB23939;
+    		return 0xFFEDF0;
     	case 15:
-    		return 0x4C4C4C;
+    		return 0x7C7C7C;
+		default:
+			break;
+     
     	}
 		return 0xFFFFFF;
     }
+	@Override
 	public int generateSkinColor() {
 		switch (this.getColor()) {
     	case 0:
-    		return 0xE9ECEC;
+    		return 0xFCFCFC;
     	case 1:
-    		return 0xED975A;
+    		return 0xFFDBA3;
     	case 2:
-    		return 0xBC7CB8;
+    		return 0xFFD5FF;
     	case 3:
-    		return 0x7BC1D8;
+    		return 0xD8F6FF;
     	case 4:
-    		return 0xF7D571;
+    		return 0xFDFFA0;
     	case 5:
-    		return 0x89B750;
+    		return 0xECFF9A;
     	case 6:
-    		return 0xEAD3DA;
+    		return 0xFFCFDE;
     	case 7:
-    		return 0x7F8B91;
+    		return 0xA0A0A0;
     	case 8:
-    		return 0xD8D8CD;
+    		return 0xDBDBDB;
     	case 9:
-    		return 0x63D2D8;
+    		return 0xA6FFE2;
     	case 10:
-    		return 0x8C5DAA;
+    		return 0xDEA9FF;
     	case 11:
-    		return 0x63669B;
+    		return 0xC9E0FF;
     	case 12:
-    		return 0xBC7643;
+    		return 0xE4A773;
     	case 13:
-    		return 0x8EB72D;
+    		return 0xC9FF88;
     	case 14:
-    		return 0xED9693;
+    		return 0xFFB5B4;
     	case 15:
-    		return 0x333333;
+    		return 0x404040;
+		default:
+			break;
+     
     	}
 		return 0xFFFFFF;
-	}
+    }
+	@Override
 	public int generateHairColor() {
-		switch (this.getHairColor()) {
+		switch (this.getColor()) {
     	case 0:
-    		return 0xFFFFFF;
+    		return 0xC9C9C9;
     	case 1:
-    		return 0xFF7200;
+    		return 0xFFB33D;
     	case 2:
-    		return 0xAE00FF;
+    		return 0xFF88FF;
     	case 3:
-    		return 0xB2D6FF;
+    		return 0xA3E1F3;
     	case 4:
-    		return 0xF9F900;
+    		return 0xFAFF34;
     	case 5:
-    		return 0xD7FFB2;
+    		return 0xDCFF43;
     	case 6:
-    		return 0xFFB2CB;
+    		return 0xF38BAA;
     	case 7:
-    		return 0xD8D8D8;
+    		return 0x828282;
     	case 8:
-    		return 0xAFAFAF;
+    		return 0xA0A0A0;
     	case 9:
-    		return 0xB2E6FF;
+    		return 0x00FFAE;
     	case 10:
-    		return 0xC07CFF;
+    		return 0xC464FF;
     	case 11:
-    		return 0xB2C1FF;
+    		return 0x7399FF;
     	case 12:
-    		return 0xCC8547;
+    		return 0x97663C;
     	case 13:
-    		return 0xC5FF3F;
+    		return 0x82FF64;
     	case 14:
-    		return 0xFF5454;
+    		return 0xFF6161;
     	case 15:
-    		return 0x000000;
+    		return 0x191919;
+		default:
+			break;
+     
     	}
 		return 0xFFFFFF;
-	}
+    }
+	
 	public void convertGems(int placement) {
     	this.setGemCut(GemCuts.CABOCHON.id);
     	switch (placement) {
@@ -256,7 +269,8 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
 	public void writeEntityToNBT(NBTTagCompound compound) {
         compound.setInteger("color", this.getColor());
         compound.setInteger("hairColor", this.getHairColor());
-        compound.setInteger("visorColor", this.getVisorColor());
+        compound.setInteger("gloveColor", this.getGloveColor());
+        compound.setInteger("visorColor", this.getInsigniaColor());
         compound.setInteger("dressStyle", this.getDressStyle());
         compound.setBoolean("naked", this.isNaked());
         compound.setString("song", this.soulSong);
@@ -271,13 +285,17 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
         compound.setTag("items", nbttaglist);
         super.writeEntityToNBT(compound);
 	}
-    public void readEntityFromNBT(NBTTagCompound compound) {
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
         this.setColor(compound.getInteger("color"));
         if (compound.hasKey("hairColor")) {
         	this.setHairColor(compound.getInteger("hairColor"));
         }
         else {
         	this.setHairColor(this.getColor());
+        }
+        if (compound.hasKey("gloveColor")) {
+        	this.setHairColor(compound.getInteger("gloveColor"));
         }
         if (compound.hasKey("visorColor")) {
         	this.setVisorColor(compound.getInteger("visorColor"));
@@ -304,23 +322,17 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
     	this.setGemCut(GemCuts.CABOCHON.id);
     	this.itemDataToGemData(this.getColor());
     	this.setDressStyle(this.rand.nextInt(EntityPearl.PEARL_DRESS_STYLES.size()));
-    	if (this.isDefective()) {
-    		this.setHairColor(15 - this.getColor());
-    	}
-    	else {
-    		this.setHairColor(this.getColor());
-    	}
-    	this.nativeColor = this.getColor();
         return livingdata;
     }
+	@Override
     public void itemDataToGemData(int data) {
 		this.setColor(data);
-		this.setHairColor(data);
+		this.setHairColor(this.getColor());
+		this.setSkinColor(this.getColor());
 		this.setVisorColor(data);
 		this.setInsigniaColor(data);
 		this.setUniformColor(data);
 		this.setGemColor(this.generateGemColor());
-		this.nativeColor = this.getColor();
 	}
     protected int generateHairStyle() {
     	return this.rand.nextInt(EntityPearl.PEARL_HAIR_STYLES.size());
@@ -365,6 +377,14 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
 				        			stack.shrink(1);
 				        		}
 		    				}
+		    				else if (DyeUtils.isDye(stack)) {
+			    				if (player.isSneaking()) {
+			    					int oldColor = this.getEyeColor();
+					        		this.setEyeColor(DyeUtils.metaFromStack(stack).orElse(0));
+					        		if (!player.capabilities.isCreativeMode && oldColor != this.getEyeColor()) {
+					        			stack.shrink(1);
+					        		}
+			    				}
 		    				else {
 			    				int oldColor = this.getColor();
 				        		this.setColor(15 - stack.getItemDamage());
@@ -374,6 +394,7 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
 		    				}
 			        		return true;
 		    			}
+
 		    			else if (stack.getItem() == Item.getItemFromBlock(Blocks.STAINED_GLASS_PANE)) {
 		    				if (player.isSneaking()) {
 		    					if (this.hasVisor()) {
@@ -412,6 +433,14 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
 					        		this.playSound(SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, this.getSoundVolume(), this.getSoundPitch());
 					        		return true;
 			    				}
+			    			}
+			    			else if (stack.getItem() == Item.getItemFromBlock(Blocks.CARPET)) {
+			    				if (this.isNaked()) {
+			    					this.setUniformColor(stack.getItemDamage());
+			    					this.setNaked(false);
+			    					stack.shrink(1);
+			    				}
+			  
 			    				else {
 				    				int oldColor = this.getInsigniaColor();
 					        		this.setInsigniaColor(stack.getItemDamage());
@@ -435,6 +464,7 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
 		        	}
 				}
 			}
+		}
 		}
 		return super.processInteract(player, hand);
     }
@@ -493,7 +523,13 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
 	public void setHairColor(int color) {
 		this.dataManager.set(HAIR_COLOR, color);
 	}
-	
+	public int getShoeColor() {
+		return this.dataManager.get(SHOE_COLOR);
+	}
+	@Override
+	public void setShoeColor(int color) {
+		this.dataManager.set(SHOE_COLOR, color);
+	}
 	@Override
 	public int getHairColor() {
 		return this.dataManager.get(HAIR_COLOR);
@@ -509,8 +545,7 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
 	}
 	public boolean isNaked() {
 		return this.dataManager.get(NAKED);
-	}
-	public String getSpecialSkin() {
+	}	public String getSpecialSkin() {
 		return "_" + this.getSpecial();
 	}
 	public void setSpecialSkin(int special) {
@@ -529,9 +564,14 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
         	this.setColor(4);
         	break;
 		case 3:
-			this.setCustomNameTag("Yellow Pearl");
-        	this.setGemPlacement(GemPlacements.FOREHEAD.id);
+			this.setCustomNameTag("Pink Pearl");
+        	this.setGemPlacement(GemPlacements.BELLY.id);
         	this.setSpecial(3);
+        	this.setColor(6);
+        	break;
+		case 4:
+			this.setCustomNameTag("Default Pearl");
+        	this.setSpecial(0);
         	this.setColor(0);
         	break;
 		}
@@ -679,6 +719,7 @@ public class EntityPearl extends EntityGem implements IInventoryChangedListener,
 		}
 		return slots;
 	}
+
 	
 
 }

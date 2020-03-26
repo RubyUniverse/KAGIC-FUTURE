@@ -14,88 +14,85 @@ import net.minecraft.util.math.MathHelper;
  * Created using Tabula 7.1.0
  */
 public class ModelRhodonité extends ModelGem {
-    //public ModelRenderer bipedBody;
-    public ModelRenderer Waist;
+    public ModelRenderer bipedBody;
+    public ModelRenderer bipedWaist;
     public ModelRenderer bipedNeck;
     public ModelRenderer bipedRightArm;
     public ModelRenderer bipedLeftArm;
-    public ModelRenderer right_arm_bottom;
-    public ModelRenderer right_leg_bottom;
-    public ModelRenderer left_leg_bottom;
-    public ModelRenderer left_arm_bottom;
+    public ModelRenderer arm_right;
+    public ModelRenderer bipedRightLegBottom;
+    public ModelRenderer bipedLeftLegBottom;
+    public ModelRenderer arm_left;
     public ModelRenderer bipedRightLeg;
     public ModelRenderer bipedLeftLeg;
     public ModelRenderer bipedHead;
     public ModelRenderer bipedNose;
 
-    public ModelRhodonité(float modelSize, boolean isArmor) {
-		super(modelSize, 0.0F, 94, 62, false, -2F);
-        this.bipedLeftArm = new ModelRenderer(this, 64, 0);
-        this.bipedLeftArm.setRotationPoint(7.0F, 0.2F, 0.5F);
-        this.bipedLeftArm.addBox(0.0F, 0.0F, 0.0F, 4, 11, 4, 0.0F);
-        this.setRotateAngle(bipedLeftArm, 0.0F, 0.0F, -0.4363323129985824F);
-        this.bipedNose = new ModelRenderer(this, 0, 0);
-        this.bipedNose.setRotationPoint(7.5F, 7.0F, -1.5F);
-        this.bipedNose.addBox(0.0F, 0.0F, 0.0F, 1, 1, 2, 0.0F);
-        this.bipedNeck = new ModelRenderer(this, 26, 18);
-        this.bipedNeck.setRotationPoint(2.5F, -1.5F, 1.0F);
-        this.bipedNeck.addBox(0.0F, 0.0F, 0.0F, 3, 2, 3, 0.0F);
-        this.right_leg_bottom = new ModelRenderer(this, 0, 38);
-        this.right_leg_bottom.setRotationPoint(-1.0F, 5.0F, 0.0F);
-        this.right_leg_bottom.addBox(0.0F, 0.0F, 0.0F, 4, 6, 4, 0.0F);
-        this.bipedRightLeg = new ModelRenderer(this, 0, 48);
-        this.bipedRightLeg.setRotationPoint(0.5F, 6.0F, 0.5F);
-        this.bipedRightLeg.addBox(0.0F, 0.0F, 0.0F, 3, 7, 3, 0.0F);
-        this.bipedBody = new ModelRenderer(this, 0, 18);
-        this.bipedBody.setRotationPoint(-4.0F, 0.0F, -2.5F);
-        this.bipedBody.addBox(0.0F, 0.0F, 0.0F, 8, 6, 5, 0.0F);
-        this.left_leg_bottom = new ModelRenderer(this, 16, 38);
-        this.left_leg_bottom.setRotationPoint(3.0F, 5.0F, 0.0F);
-        this.left_leg_bottom.addBox(0.0F, 0.0F, 0.0F, 4, 6, 4, 0.0F);
+    public ModelRhodonité() {
+    	super(0.0F, 0.0F, 94, 62, false, -1F);
         this.bipedLeftLeg = new ModelRenderer(this, 12, 48);
         this.bipedLeftLeg.setRotationPoint(0.5F, 6.0F, 0.5F);
         this.bipedLeftLeg.addBox(0.0F, 0.0F, 0.0F, 3, 7, 3, 0.0F);
+        this.bipedNose = new ModelRenderer(this, 0, 0);
+        this.bipedNose.setRotationPoint(7.5F, 7.0F, -1.5F);
+        this.bipedNose.addBox(0.0F, 0.0F, 0.0F, 1, 1, 2, 0.0F);
+        this.bipedHead = new ModelRenderer(this, 0, 0);
+        this.bipedHead.setRotationPoint(-6.5F, -10.0F, -2.0F);
+        this.bipedHead.addBox(0.0F, 0.0F, 0.0F, 16, 10, 8, 0.0F);
+        this.bipedLeftLegBottom = new ModelRenderer(this, 16, 38);
+        this.bipedLeftLegBottom.setRotationPoint(3.0F, 5.0F, 0.0F);
+        this.bipedLeftLegBottom.addBox(0.0F, 0.0F, 0.0F, 4, 6, 4, 0.0F);
+        this.arm_left = new ModelRenderer(this, 40, 28);
+        this.arm_left.setRotationPoint(8.6F, 1.5F, -5.0F);
+        this.arm_left.addBox(0.0F, 0.0F, 0.0F, 2, 2, 8, 0.0F);
+        this.setRotateAngle(arm_left, 0.0F, -0.6108652381980153F, 0.0F);
+        this.arm_right = new ModelRenderer(this, 40, 18);
+        this.arm_right.setRotationPoint(-4.5F, 1.5F, -4.0F);
+        this.arm_right.addBox(0.0F, 0.0F, 0.0F, 2, 2, 8, 0.0F);
+        this.setRotateAngle(arm_right, 0.0F, 0.6108652381980153F, 0.0F);
+        this.bipedNeck = new ModelRenderer(this, 26, 18);
+        this.bipedNeck.setRotationPoint(2.5F, -1.5F, 1.0F);
+        this.bipedNeck.addBox(0.0F, 0.0F, 0.0F, 3, 2, 3, 0.0F);
         this.bipedRightArm = new ModelRenderer(this, 48, 0);
         this.bipedRightArm.setRotationPoint(-2.5F, -1.5F, 0.5F);
         this.bipedRightArm.addBox(0.0F, 0.0F, 0.0F, 4, 11, 4, 0.0F);
         this.setRotateAngle(bipedRightArm, 0.0F, 0.0F, 0.4363323129985824F);
-        this.left_arm_bottom = new ModelRenderer(this, 40, 28);
-        this.left_arm_bottom.setRotationPoint(8.6F, 1.5F, -5.0F);
-        this.left_arm_bottom.addBox(0.0F, 0.0F, 0.0F, 2, 2, 8, 0.0F);
-        this.setRotateAngle(left_arm_bottom, 0.0F, -0.6108652381980153F, 0.0F);
-        this.right_arm_bottom = new ModelRenderer(this, 40, 18);
-        this.right_arm_bottom.setRotationPoint(-4.5F, 1.5F, -4.0F);
-        this.right_arm_bottom.addBox(0.0F, 0.0F, 0.0F, 2, 2, 8, 0.0F);
-        this.setRotateAngle(right_arm_bottom, 0.0F, 0.6108652381980153F, 0.0F);
-        this.bipedHead = new ModelRenderer(this, 0, 0);
-        this.bipedHead.setRotationPoint(-6.5F, -10.0F, -2.0F);
-        this.bipedHead.addBox(0.0F, 0.0F, 0.0F, 16, 10, 8, 0.0F);
-        this.Waist = new ModelRenderer(this, 0, 29);
-        this.Waist.setRotationPoint(1.0F, 6.0F, 0.5F);
-        this.Waist.addBox(0.0F, 0.0F, 0.0F, 6, 5, 4, 0.0F);
-        this.bipedBody.addChild(this.bipedLeftArm);
+        this.bipedBody = new ModelRenderer(this, 0, 18);
+        this.bipedBody.setRotationPoint(-4.0F, 0.0F, -2.5F);
+        this.bipedBody.addBox(0.0F, 0.0F, 0.0F, 8, 6, 5, 0.0F);
+        this.bipedRightLegBottom = new ModelRenderer(this, 0, 38);
+        this.bipedRightLegBottom.setRotationPoint(-1.0F, 5.0F, 0.0F);
+        this.bipedRightLegBottom.addBox(0.0F, 0.0F, 0.0F, 4, 6, 4, 0.0F);
+        this.bipedRightLeg = new ModelRenderer(this, 0, 48);
+        this.bipedRightLeg.setRotationPoint(0.5F, 6.0F, 0.5F);
+        this.bipedRightLeg.addBox(0.0F, 0.0F, 0.0F, 3, 7, 3, 0.0F);
+        this.bipedWaist = new ModelRenderer(this, 0, 29);
+        this.bipedWaist.setRotationPoint(1.0F, 6.0F, 0.5F);
+        this.bipedWaist.addBox(0.0F, 0.0F, 0.0F, 6, 5, 4, 0.0F);
+        this.bipedLeftArm = new ModelRenderer(this, 64, 0);
+        this.bipedLeftArm.setRotationPoint(7.0F, 0.2F, 0.5F);
+        this.bipedLeftArm.addBox(0.0F, 0.0F, 0.0F, 4, 11, 4, 0.0F);
+        this.setRotateAngle(bipedLeftArm, 0.0F, 0.0F, -0.4363323129985824F);
+        this.bipedLeftLegBottom.addChild(this.bipedLeftLeg);
         this.bipedHead.addChild(this.bipedNose);
-        this.bipedBody.addChild(this.bipedNeck);
-        this.Waist.addChild(this.right_leg_bottom);
-        this.right_leg_bottom.addChild(this.bipedRightLeg);
-        this.Waist.addChild(this.left_leg_bottom);
-        this.left_leg_bottom.addChild(this.bipedLeftLeg);
-        this.bipedBody.addChild(this.bipedRightArm);
-        this.Waist.addChild(this.left_arm_bottom);
-        this.Waist.addChild(this.right_arm_bottom);
         this.bipedNeck.addChild(this.bipedHead);
-        this.bipedBody.addChild(this.Waist);
+        this.bipedWaist.addChild(this.bipedLeftLegBottom);
+        this.bipedWaist.addChild(this.arm_left);
+        this.bipedWaist.addChild(this.arm_right);
+        this.bipedBody.addChild(this.bipedNeck);
+        this.bipedBody.addChild(this.bipedRightArm);
+        this.bipedWaist.addChild(this.bipedRightLegBottom);
+        this.bipedRightLegBottom.addChild(this.bipedRightLeg);
+        this.bipedBody.addChild(this.bipedWaist);
+        this.bipedBody.addChild(this.bipedLeftArm);
     }
 
-    	public ModelRhodonité() {
-		this(0, false);
-	}
-
-	@Override
+    @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
         this.bipedBody.render(f5);
     }
-	@Override
+
+    @Override
 	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn)
 	{
 		boolean flag = entityIn instanceof EntityLivingBase && ((EntityLivingBase)entityIn).getTicksElytraFlying() > 4;
@@ -131,13 +128,13 @@ public class ModelRhodonité extends ModelGem {
 
 		this.bipedRightArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 2.0F * limbSwingAmount * 0.5F / f;
 		this.bipedRightArm.rotateAngleZ = 0.0F;
-		this.right_arm_bottom.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F / f;
-		this.right_arm_bottom.rotateAngleZ = (float)Math.PI / 2F;
+		this.arm_right.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F / f;
+		this.arm_right.rotateAngleZ = (float)Math.PI / 2F;
 		
 		this.bipedLeftArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F / f;
 		this.bipedLeftArm.rotateAngleZ = 0.0F;
-		this.left_arm_bottom.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 2.0F * limbSwingAmount * 0.5F / f;
-		this.left_arm_bottom.rotateAngleZ = (float)Math.PI / -2F;
+		this.arm_left.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 2.0F * limbSwingAmount * 0.5F / f;
+		this.arm_left.rotateAngleZ = (float)Math.PI / -2F;
 		
 		this.bipedRightLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 0.7F * limbSwingAmount / f;
 		this.bipedLeftLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 0.7F * limbSwingAmount / f;
@@ -246,13 +243,13 @@ public class ModelRhodonité extends ModelGem {
 
 		this.bipedRightArm.rotateAngleZ += MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.375F;
 		this.bipedRightArm.rotateAngleX += MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
-		this.right_arm_bottom.rotateAngleZ -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
-		this.right_arm_bottom.rotateAngleX -= MathHelper.sin(ageInTicks * 0.067F) * 0.05F + .9F;
+		this.arm_right.rotateAngleZ -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+		this.arm_right.rotateAngleX -= MathHelper.sin(ageInTicks * 0.067F) * 0.05F + .9F;
 
 		this.bipedLeftArm.rotateAngleZ -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.375F;
 		this.bipedLeftArm.rotateAngleX -= MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
-		this.left_arm_bottom.rotateAngleZ += MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
-		this.left_arm_bottom.rotateAngleX += MathHelper.sin(ageInTicks * 0.067F) * 0.05F - .9F;
+		this.arm_left.rotateAngleZ += MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+		this.arm_left.rotateAngleX += MathHelper.sin(ageInTicks * 0.067F) * 0.05F - .9F;
 
 		if (this.rightArmPose == ModelBiped.ArmPose.BOW_AND_ARROW)
 		{
@@ -271,7 +268,6 @@ public class ModelRhodonité extends ModelGem {
 
 		copyModelAngles(this.bipedHead, this.bipedHeadwear);
 	}
-
     /**
      * This is a helper function from Tabula to set the rotation of model parts
      */

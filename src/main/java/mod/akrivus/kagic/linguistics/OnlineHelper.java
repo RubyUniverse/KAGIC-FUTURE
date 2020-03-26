@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+import net.minecraft.util.math.MathHelper;
+
 public class OnlineHelper {
 	public static String getOnlineString(String url) throws Exception {
 		URL website = new URL(url);
@@ -22,6 +24,7 @@ public class OnlineHelper {
 		Thread request = new Thread(new ThreadedRequest(url));
 		request.start();
 	}
+
 	static class ThreadedRequest implements Runnable {
 		private String url;
 		public ThreadedRequest(String url) {

@@ -1,6 +1,7 @@
 package mod.akrivus.kagic.client.render;
 
 import mod.akrivus.kagic.client.model.fusions.ModelRhodonite;
+import mod.akrivus.kagic.client.model.fusions.ModelRhodonitu;
 import mod.akrivus.kagic.client.model.fusions.ModelRhodonité;
 import mod.akrivus.kagic.client.render.layers.LayerBirthdayHat;
 import mod.akrivus.kagic.client.render.layers.LayerCrossFusionGemPlacement;
@@ -19,7 +20,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderRhodonite extends RenderGemBase<EntityRhodonite> {
 
 	public RenderRhodonite() {
-		super(Minecraft.getMinecraft().getRenderManager(), new ModelRhodonité(), 0.5F);
+		super(Minecraft.getMinecraft().getRenderManager(), new ModelRhodonitu(), 0.5F);
 
 		this.addLayer(new LayerRhodoniteItem(this));
 
